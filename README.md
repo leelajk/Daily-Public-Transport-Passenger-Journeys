@@ -92,10 +92,10 @@ If SARIMA fails to fit a route due to instability, the algorithm uses last-week 
 
 # Output
 
-✔ Forecast table — predicted ridership for all routes for the next 7 days
-✔ Forecast plot — trend lines per route
-✔ Evaluation metrics — RMSE and MAPE for test window
-✔ Insights for scheduling and resource optimization
+- Forecast table — predicted ridership for all routes for the next 7 days
+- Forecast plot — trend lines per route
+- Evaluation metrics — RMSE and MAPE for test window
+- Insights for scheduling and resource optimization
 
 # Business Insights Generated
 
