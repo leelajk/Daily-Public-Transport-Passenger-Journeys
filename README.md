@@ -11,17 +11,12 @@ Public transport demand fluctuates across weekdays, weekends, and school periods
 
 This project analyzes multi-year daily ridership data across multiple routes:
 
-Local Route
-
-Light Rail
-
-Peak Service
-
-Rapid Route
-
-School
-
-Other
+- Local Route
+- Light Rail
+- Peak Service
+- Rapid Route
+- School
+- Other
 
 and generates short-term actionable demand forecasts with operational insights.
 
@@ -56,10 +51,10 @@ Forecasting	SARIMA (via statsmodels)
 Data Handling	Pandas, NumPy
 Visualization	Matplotlib, Seaborn
 Evaluation	RMSE, MAPE
+
+
 # Exploratory Analysis Highlights
-
 The notebook performs several visual analyses to understand ridership behavior:
-
 Analysis	Purpose
 Daily total ridership trend	Long-term demand evolution
 Weekly aggregation	System-wide seasonality
@@ -67,58 +62,41 @@ Day-of-week averages	Weekday–weekend behavior
 School vs non-school days	Effect of school periods on other services
 Weekday vs weekend demand	Operational load variation
 Year-wise behavior of “Other” category	Long-term classification patterns or anomalies
+
 # Forecasting Approach
 Chosen Model — SARIMA
 
 SARIMA is used because it:
+- Captures weekly seasonality
+- Models long-term trends and autocorrelation
+- Handles non-stationary behavior through differencing
+- The model is run separately for each route to generate route-specific predictions.
 
-Captures weekly seasonality
-
-Models long-term trends and autocorrelation
-
-Handles non-stationary behavior through differencing
-
-The model is run separately for each route to generate route-specific predictions.
-
-Model Configuration
+# Model Configuration
 order = (1, 1, 1)
-seasonal_order = (0, 1, 1, 7)   # weekly cycle
+seasonal_order = (0, 1, 1, 7)   
 forecast_days = 7
-test_window = 60                # used for evaluation
+test_window = 60                
 
-Fallback Strategy
-
-If SARIMA fails to fit a route due to instability, the algorithm uses last-week replication to ensure uninterrupted forecasting.
 
 # Output
-
 - Forecast table — predicted ridership for all routes for the next 7 days
 - Forecast plot — trend lines per route
 - Evaluation metrics — RMSE and MAPE for test window
 - Insights for scheduling and resource optimization
 
 # Business Insights Generated
-
 The forecast and EDA provide data-driven decision support, such as:
-
-Add more buses during school periods and weekday peaks
-
-Reduce fleet deployment on weekends and school holidays
-
-Reassign idle buses to high-demand routes
-
-Identify potential data quality gaps from the rising “Other” category
-
+- Add more buses during school periods and weekday peaks
+- Reduce fleet deployment on weekends and school holidays
+- Reassign idle buses to high-demand routes
+- Identify potential data quality gaps from the rising “Other” category
 
 
 # Future Improvements
 
 Some meaningful extensions that can be added:
-
-Hyperparameter tuning and model comparison (SARIMA vs Prophet vs LSTM)
-
-Holiday/event tagging to improve forecast accuracy
-
-Real-time scheduling dashboard using Flask/Streamlit
-
-Clustering of routes based on demand similarity
+- Hyperparameter tuning and model comparison (SARIMA vs Prophet vs LSTM)
+- Holiday/event tagging to improve forecast accuracy
+- Real-time scheduling dashboard using Flask/Streamlit
+- Clustering of routes based on demand similarity
