@@ -6,14 +6,14 @@ Public Transport Ridership Forecasting using SARIMA
 This project performs exploratory time-series analysis and 7-day route-level ridership forecasting for public transport services. It leverages SARIMA (Seasonal ARIMA) models to capture trend and weekly seasonality, helping transport agencies plan schedules, allocate buses, and reduce operational costs.
 
 # Dataset Description
-Column	Description
-Date	Calendar date (daily records)
-Local Route	Daily ridership count
-Light Rail	Daily ridership count
-Peak Service	Ridership during office peak service
-Rapid Route	Fast-route bus services
-School	Ridership from school-focused services
-Other	All remaining classified passenger journeys
+- Column	Description
+- Date	Calendar date (daily records)
+- Local Route	Daily ridership count
+- Light Rail	Daily ridership count
+- Peak Service	Ridership during office peak service
+- Rapid Route	Fast-route bus services
+- School	Ridership from school-focused services
+- Other	All remaining classified passenger journeys
 
 The dataset spans multiple years, enabling both long-term trend study and short-term demand prediction.
 # Project Overview
